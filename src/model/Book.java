@@ -1,3 +1,5 @@
+package model;
+
 import java.sql.Date;
 
 public class Book {
@@ -8,8 +10,21 @@ public class Book {
     private String isbn;
     private Date published_date;
     private Long publisher_id;
+    private Long reader_id;
 
-    public Book(Long id, String title, Integer total_pages, Double rating, String isbn, Date published_date, Long publisher_id) {
+    public Book() {}
+
+    public Book(String title, Integer total_pages, Double rating, String isbn, Date published_date, Long publisher_id, Long reader_id) {
+        this.title = title;
+        this.total_pages = total_pages;
+        this.rating = rating;
+        this.isbn = isbn;
+        this.published_date = published_date;
+        this.publisher_id = publisher_id;
+        this.reader_id = reader_id;
+    }
+
+    public Book(Long id, String title, Integer total_pages, Double rating, String isbn, Date published_date, Long publisher_id, Long reader_id) {
         this.id = id;
         this.title = title;
         this.total_pages = total_pages;
@@ -17,15 +32,21 @@ public class Book {
         this.isbn = isbn;
         this.published_date = published_date;
         this.publisher_id = publisher_id;
+        this.reader_id = reader_id;
     }
 
-    public Book(String title, Integer total_pages, Double rating, String isbn, Date published_date, Long publisher_id) {
-        this.title = title;
-        this.total_pages = total_pages;
-        this.rating = rating;
-        this.isbn = isbn;
-        this.published_date = published_date;
-        this.publisher_id = publisher_id;
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", total_pages=" + total_pages +
+                ", rating=" + rating +
+                ", isbn='" + isbn + '\'' +
+                ", published_date=" + published_date +
+                ", publisher_id=" + publisher_id +
+                ", reader_id=" + reader_id +
+                '}';
     }
 
     public Long getId() {
@@ -78,5 +99,13 @@ public class Book {
 
     public void setPublisher_id(Long publisher_id) {
         this.publisher_id = publisher_id;
+    }
+
+    public Long getReader_id() {
+        return reader_id;
+    }
+
+    public void setReader_id(Long reader_id) {
+        this.reader_id = reader_id;
     }
 }
