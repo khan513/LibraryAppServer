@@ -44,13 +44,14 @@ public class AuthorDao {
             }
             statement.close();
             result.close();
-            System.out.println("All the authors were retrieved successfully! :)");
-            return authors;
         } catch (SQLException e) {
             System.out.println("Could not retrieve the authors :(");
             e.printStackTrace();
         }
-        return Collections.emptyList();
+        if (authors.isEmpty())
+            return Collections.emptyList();
+        System.out.println("All the authors were retrieved successfully! :)");
+        return authors;
     }
 
     public static void deleteAuthorById(Long id) {

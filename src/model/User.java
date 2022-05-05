@@ -2,19 +2,19 @@ package model;
 
 import java.io.Serializable;
 
-public class Reader implements Serializable {
+public class User implements Serializable {
     private Long id;
     private String login;
     private String password;
 
-    public Reader() {}
+    public User() {}
 
-    public Reader(String login, String password) {
+    public User(String login, String password) {
         this.login = login;
         this.password = password;
     }
 
-    public Reader(Long id, String login, String password) {
+    public User(Long id, String login, String password) {
         this.id = id;
         this.login = login;
         this.password = password;

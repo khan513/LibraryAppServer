@@ -45,13 +45,14 @@ public class BookDao {
             }
             statement.close();
             result.close();
-            System.out.println("All the books were retrieved successfully! :)");
-            return books;
         } catch (SQLException e) {
             System.out.println("Could not retrieve all the books :(");
             e.printStackTrace();
         }
-        return Collections.emptyList();
+        if (books.isEmpty())
+            return Collections.emptyList();
+        System.out.println("All the books were retrieved successfully! :)");
+        return books;
     }
 
     public static void deleteBookById(Long id) {

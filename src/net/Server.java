@@ -13,21 +13,22 @@ public class Server {
 
     public void startServer() {
         try {
-            while(!serverSocket.isClosed()) {
+            while (!serverSocket.isClosed()) {
                 Socket socket = serverSocket.accept();
                 System.out.println("A new client has connected! :)");
-                ClientHanlder clientHanlder = new ClientHanlder(socket);
-                Thread thread = new Thread(clientHanlder);
+                ClientHandler clientHandler = new ClientHandler(socket);
+                Thread thread = new Thread(clientHandler);
                 thread.start();
             }
         } catch (IOException e) {
+            closeServerSocket();
             e.printStackTrace();
         }
     }
 
     public void closeServerSocket() {
         try {
-            if(serverSocket != null) {
+            if (serverSocket != null) {
                 serverSocket.close();
             }
         } catch (IOException e) {

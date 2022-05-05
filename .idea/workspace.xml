@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a56190ea-373c-49ba-8c42-ed53deac294f" name="Changes" comment="creating Repos">
+      <change afterPath="$PROJECT_DIR$/src/data/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/net/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/595c8292-4ab5-44da-9960-866be4c3967e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/595c8292-4ab5-44da-9960-866be4c3967e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/AuthorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/AuthorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/BookDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/ClientHanlder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +101,7 @@
       <workItem from="1651652389102" duration="785000" />
       <workItem from="1651656461883" duration="2116000" />
       <workItem from="1651742090835" duration="92000" />
-      <workItem from="1651743178211" duration="587000" />
+      <workItem from="1651743178211" duration="8528000" />
     </task>
     <task id="LOCAL-00001" summary="configuring the database">
       <created>1650703267588</created>
