@@ -10,12 +10,12 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class AuthorRepository {
+public class AuthorDao {
 
     public static void addAuthor(Author author) {
         try {
             String query = "INSERT INTO authors(first_name, last_name) VALUES(?, ?)";
-            PreparedStatement preparedStatement = Dao.connection.prepareStatement(query);
+            PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement(query);
             preparedStatement.setString(1, author.getFirst_name());
             preparedStatement.setString(2, author.getLast_name());
             preparedStatement.executeUpdate();
@@ -30,7 +30,7 @@ public class AuthorRepository {
     public static List<Author> getAllAuthors() {
         List<Author> authors = new LinkedList<>();
         try {
-            Statement statement = Dao.connection.createStatement();
+            Statement statement = LibraryDB.connection.createStatement();
             String query = "SELECT * FROM authors";
             ResultSet result = statement.executeQuery(query);
             while (result.next()) {
@@ -55,7 +55,7 @@ public class AuthorRepository {
 
     public static void deleteAuthorById(Long id) {
         try {
-            Statement statement = Dao.connection.createStatement();
+            Statement statement = LibraryDB.connection.createStatement();
             String query = "DELETE FROM authors WHERE author_id = " + id;
             statement.executeUpdate(query);
             statement.close();
@@ -69,7 +69,7 @@ public class AuthorRepository {
     public static void editAuthor(Long id, Author newAuthor) {
         try {
             String query = "UPDATE authors SET first_name = ?, last_name = ? WHERE author_id = " + id;
-            PreparedStatement preparedStatement = Dao.connection.prepareStatement(query);
+            PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement(query);
             preparedStatement.setString(1, newAuthor.getFirst_name());
             preparedStatement.setString(2, newAuthor.getLast_name());
             preparedStatement.executeUpdate();

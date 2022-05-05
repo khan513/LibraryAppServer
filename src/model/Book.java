@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Book {
+public class Book implements Serializable {
     private Long id;
     private String title;
     private Integer total_pages;

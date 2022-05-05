@@ -1,6 +1,8 @@
 package model;
 
-public class Publisher {
+import java.io.Serializable;
+
+public class Publisher implements Serializable {
     private Long id;
     private String name;
 

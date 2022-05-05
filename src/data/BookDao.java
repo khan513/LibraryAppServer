@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BookRepository {
+public class BookDao {
 
     public static void addBook(Book book) {
         try {
@@ -28,7 +28,7 @@ public class BookRepository {
     public static List<Book> getAllBooks() {
         List<Book> books = new LinkedList<>();
         try {
-            Statement statement = Dao.connection.createStatement();
+            Statement statement = LibraryDB.connection.createStatement();
             String query = "SELECT * FROM books";
             ResultSet result = statement.executeQuery(query);
             while (result.next()) {
@@ -56,7 +56,7 @@ public class BookRepository {
 
     public static void deleteBookById(Long id) {
         try {
-            Statement statement = Dao.connection.createStatement();
+            Statement statement = LibraryDB.connection.createStatement();
             String query = "DELETE FROM books WHERE book_id = " + id;
             statement.executeUpdate(query);
             statement.close();
@@ -69,7 +69,7 @@ public class BookRepository {
 
     public static void deleteBookByTitle(String title) {
         try {
-            Statement statement = Dao.connection.createStatement();
+            Statement statement = LibraryDB.connection.createStatement();
             String query = "DELETE FROM books WHERE title = \'" + title + "\'";
             statement.executeUpdate(query);
             statement.close();
@@ -94,7 +94,7 @@ public class BookRepository {
     }
 
     private static PreparedStatement prepareStatement(Book book, String query) throws SQLException {
-        PreparedStatement preparedStatement = Dao.connection.prepareStatement(query);
+        PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement(query);
         preparedStatement.setString(1, book.getTitle());
         preparedStatement.setInt(2, book.getTotal_pages());
         preparedStatement.setDouble(3, book.getRating());

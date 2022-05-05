@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a56190ea-373c-49ba-8c42-ed53deac294f" name="Changes" comment="creating Repos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config" beforeDir="false" afterPath="$PROJECT_DIR$/db_config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/AuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/AuthorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +35,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
-    "last_opened_file_path": "/home/khan/IdeaProjects/library_App",
+    "last_opened_file_path": "/home/khan/IdeaProjects/LibraryAppServer",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
@@ -95,6 +90,8 @@
       <workItem from="1651647844948" duration="890000" />
       <workItem from="1651652389102" duration="785000" />
       <workItem from="1651656461883" duration="2116000" />
+      <workItem from="1651742090835" duration="92000" />
+      <workItem from="1651743178211" duration="587000" />
     </task>
     <task id="LOCAL-00001" summary="configuring the database">
       <created>1650703267588</created>

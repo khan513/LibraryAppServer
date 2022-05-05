@@ -1,6 +1,8 @@
 package model;
 
-public class Author {
+import java.io.Serializable;
+
+public class Author implements Serializable {
     private Long id;
     private String first_name;
     private String last_name;
