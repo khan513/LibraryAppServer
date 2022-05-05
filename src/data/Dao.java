@@ -11,7 +11,7 @@ public class Dao {
     public static void connectToTheDatabase() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            BufferedReader reader = new BufferedReader(new FileReader("/home/khan/IdeaProjects/LibraryAppServer/config"));
+            BufferedReader reader = new BufferedReader(new FileReader("/home/khan/IdeaProjects/LibraryAppServer/db_config"));
             String line, url, user, password;
             line = reader.readLine();
             url = line.substring(line.indexOf(" ") + 1);

@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a56190ea-373c-49ba-8c42-ed53deac294f" name="Changes" comment="configuring the database">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/AuthorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/BookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/Dao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Author.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Publisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Reader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/net/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a56190ea-373c-49ba-8c42-ed53deac294f" name="Changes" comment="creating Repos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config" beforeDir="false" afterPath="$PROJECT_DIR$/db_config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/AuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/AuthorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,25 +33,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/khan/.config/JetBrains/IntelliJIdea2022.1/jdbc-drivers/MySQL ConnectorJ/8.0.25/mysql-connector-java-8.0.25.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "/home/khan/IdeaProjects/library_App",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -92,7 +85,16 @@
       <workItem from="1650780258941" duration="4174000" />
       <workItem from="1650784463456" duration="5616000" />
       <workItem from="1650811699518" duration="155000" />
-      <workItem from="1650876731866" duration="951000" />
+      <workItem from="1650876731866" duration="4202000" />
+      <workItem from="1650989965949" duration="3141000" />
+      <workItem from="1650995027688" duration="600000" />
+      <workItem from="1651047121949" duration="872000" />
+      <workItem from="1651050007476" duration="1362000" />
+      <workItem from="1651052228040" duration="24000" />
+      <workItem from="1651647017401" duration="366000" />
+      <workItem from="1651647844948" duration="890000" />
+      <workItem from="1651652389102" duration="785000" />
+      <workItem from="1651656461883" duration="2116000" />
     </task>
     <task id="LOCAL-00001" summary="configuring the database">
       <created>1650703267588</created>
@@ -101,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650703267588</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="creating Repos">
+      <created>1650877877054</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650877877054</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +129,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="configuring the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="configuring the database" />
+    <MESSAGE value="creating Repos" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating Repos" />
   </component>
 </project>

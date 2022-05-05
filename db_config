@@ -1,0 +1,3 @@
+url: jdbc:mysql://localhost/library?allowPublicKeyRetrieval=true&useSSL=false
+user: khan
+password: Qwerty123!

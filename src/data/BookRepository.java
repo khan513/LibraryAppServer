@@ -14,7 +14,7 @@ public class BookRepository {
 
     public static void addBook(Book book) {
         try {
-                String query = "INSERT INTO books(title, total_pages, rating, isbn, published_date, publisher_id, reader_id) VALUES(?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO books(title, total_pages, rating, isbn, published_date, publisher_id, reader_id) VALUES(?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = prepareStatement(book, query);
             preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -54,26 +54,26 @@ public class BookRepository {
         return Collections.emptyList();
     }
 
-    public static void deleteBookByTitle(String title) {
-        try {
-            Statement statement = Dao.connection.createStatement();
-            String query = "DELETE FROM books WHERE title = \'" + title + "\'";
-            statement.executeUpdate(query);
-            statement.close();
-            System.out.println("The book was deleted successfully! :)");
-        } catch (SQLException e) {
-            System.out.println("Could not delete the book :(");
-            e.printStackTrace();
-        }
-    }
-
     public static void deleteBookById(Long id) {
         try {
             Statement statement = Dao.connection.createStatement();
             String query = "DELETE FROM books WHERE book_id = " + id;
             statement.executeUpdate(query);
             statement.close();
-            System.out.println("The book was deleted successfully! :)");
+            System.out.println("Book was deleted successfully! :)");
+        } catch (SQLException e) {
+            System.out.println("Could not delete the book :(");
+            e.printStackTrace();
+        }
+    }
+
+    public static void deleteBookByTitle(String title) {
+        try {
+            Statement statement = Dao.connection.createStatement();
+            String query = "DELETE FROM books WHERE title = \'" + title + "\'";
+            statement.executeUpdate(query);
+            statement.close();
+            System.out.println("Book was deleted successfully! :)");
         } catch (SQLException e) {
             System.out.println("Could not delete the book :(");
             e.printStackTrace();
@@ -86,7 +86,7 @@ public class BookRepository {
             PreparedStatement preparedStatement = prepareStatement(newBook, query);
             preparedStatement.executeUpdate();
             preparedStatement.close();
-            System.out.println("The book is up to date now! :)");
+            System.out.println("Book is up to date now! :)");
         } catch (SQLException e) {
             System.out.println("Could not update the book :(");
             e.printStackTrace();

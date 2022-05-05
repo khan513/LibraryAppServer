@@ -1,3 +1,0 @@
-url: jdbc:mysql://localhost/library?serverTimezone=Europe/Moscow&useSSL=false
-user: khan
-password: Qwerty123!
