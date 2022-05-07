@@ -1,6 +1,5 @@
 package data;
 
-import model.Author;
 import model.User;
 
 import java.sql.PreparedStatement;
@@ -15,10 +14,8 @@ public class UserDao {
 
     public static void addUser(User user) {
         try {
-            String query = "INSERT INTO users(login, password) VALUES(?, ?)";
-            PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement(query);
-            preparedStatement.setString(1, user.getLogin());
-            preparedStatement.setString(2, user.getPassword());
+            String query = "INSERT INTO users(name, surname, login, password) VALUES(?, ?, ?, ?)";
+            PreparedStatement preparedStatement = prepareStatement(user, query);
             preparedStatement.executeUpdate();
             preparedStatement.close();
             System.out.println("User was inserted successfully! :)");
@@ -38,6 +35,8 @@ public class UserDao {
                 users.add(
                         new User(
                                 result.getLong("user_id"),
+                                result.getString("name"),
+                                result.getString("surname"),
                                 result.getString("login"),
                                 result.getString("password")
                         )
@@ -70,10 +69,8 @@ public class UserDao {
 
     public static void editUser(Long id, User newUser) {
         try {
-            String query = "UPDATE users SET login = ?, password = ? WHERE user_id = " + id;
-            PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement(query);
-            preparedStatement.setString(1, newUser.getLogin());
-            preparedStatement.setString(2, newUser.getPassword());
+            String query = "UPDATE users SET name = ?, surname = ?, login = ?, password = ? WHERE user_id = " + id;
+            PreparedStatement preparedStatement = prepareStatement(newUser, query);
             preparedStatement.executeUpdate();
             preparedStatement.close();
             System.out.println("User is up to date now! :)");
@@ -81,5 +78,37 @@ public class UserDao {
             System.out.println("Could not update the user :(");
             e.printStackTrace();
         }
+    }
+
+    public static User login(String login, String password) {
+        try {
+            PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement("SELECT * FROM users WHERE id=? and password=?");
+            preparedStatement.setString(1, login);
+            preparedStatement.setString(2, password);
+            ResultSet result = preparedStatement.executeQuery();
+            if (result.next()) {
+                return new User(
+                        result.getLong("user_id"),
+                        result.getString("name"),
+                        result.getString("surname"),
+                        result.getString("login"),
+                        result.getString("password")
+                );
+            }
+            preparedStatement.close();
+            result.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private static PreparedStatement prepareStatement(User user, String query) throws SQLException {
+        PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement(query);
+        preparedStatement.setString(1, user.getName());
+        preparedStatement.setString(2, user.getSurname());
+        preparedStatement.setString(3, user.getLogin());
+        preparedStatement.setString(4, user.getPassword());
+        return preparedStatement;
     }
 }
