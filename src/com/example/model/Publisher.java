@@ -1,4 +1,4 @@
-package model;
+package com.example.model;
 
 import java.io.Serializable;
 
@@ -6,7 +6,8 @@ public class Publisher implements Serializable {
     private Long id;
     private String name;
 
-    public Publisher() {}
+    public Publisher() {
+    }
 
     public Publisher(String name) {
         this.name = name;

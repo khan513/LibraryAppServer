@@ -1,11 +1,11 @@
-package net;
+package com.example.net;
 
-import data.AuthorDao;
-import data.BookDao;
-import data.UserDao;
-import model.Author;
-import model.Book;
-import model.User;
+import com.example.data.AuthorDao;
+import com.example.data.BookDao;
+import com.example.data.UserDao;
+import com.example.model.Author;
+import com.example.model.Book;
+import com.example.model.User;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -18,14 +18,14 @@ import java.util.Locale;
 
 public class ClientHandler extends Thread {
     private Socket socket;
-    private ObjectInputStream in;
     private ObjectOutputStream out;
+    private ObjectInputStream in;
 
     public ClientHandler(Socket socket) {
         try {
             this.socket = socket;
-            this.in = new ObjectInputStream(socket.getInputStream());
             this.out = new ObjectOutputStream(socket.getOutputStream());
+            this.in = new ObjectInputStream(socket.getInputStream());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,12 +35,14 @@ public class ClientHandler extends Thread {
     public void run() {
         try {
             Request request;
-            while (socket.isConnected() && ((request = (Request) in.readObject()) != null)) {
-                System.out.println(String.join(
+            while ((request = (Request) in.readObject()) != null) {
+                System.out.println("Request [" +
                         "Client: " + socket.getInetAddress().getHostAddress().toLowerCase(Locale.ROOT) +
-                                "\nRequest type: " + request.getType() +
-                                "\nRequest description: " + request.getDescription()) +
-                        "\nRequest time: " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
+                        "\tType: " + request.getType() +
+                        "\tDescription: " + request.getDescription() +
+                        "\tTime: " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME).substring(0, 16)
+                        + "]"
+                );
                 switch (request.getType()) {
                     case GET -> {
                         if (request.getDescription().equals("LOGIN")) {

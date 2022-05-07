@@ -1,4 +1,4 @@
-import net.Server;
+import com.example.net.*;
 
 import java.io.IOException;
 import java.net.ServerSocket;

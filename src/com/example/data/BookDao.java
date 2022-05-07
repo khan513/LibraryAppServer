@@ -1,6 +1,6 @@
-package data;
+package com.example.data;
 
-import model.Book;
+import com.example.model.Book;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +11,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class BookDao {
-
     public static void addBook(Book book) {
         try {
             String query = "INSERT INTO books(title, total_pages, rating, isbn, published_date, publisher_id, reader_id) VALUES(?, ?, ?, ?, ?, ?, ?)";

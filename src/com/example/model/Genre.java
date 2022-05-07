@@ -1,4 +1,4 @@
-package model;
+package com.example.model;
 
 import java.io.Serializable;
 
@@ -6,7 +6,8 @@ public class Genre implements Serializable {
     private Long id;
     private String genre;
 
-    public Genre() {}
+    public Genre() {
+    }
 
     public Genre(String genre) {
         this.genre = genre;

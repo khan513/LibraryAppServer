@@ -1,4 +1,4 @@
-package model;
+package com.example.model;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -13,7 +13,8 @@ public class Book implements Serializable {
     private Long publisher_id;
     private Long reader_id;
 
-    public Book() {}
+    public Book() {
+    }
 
     public Book(String title, Integer total_pages, Double rating, String isbn, Date published_date, Long publisher_id, Long reader_id) {
         this.title = title;

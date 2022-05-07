@@ -1,6 +1,6 @@
-package data;
+package com.example.data;
 
-import model.Author;
+import com.example.model.Author;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,14 +10,15 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class AuthorDao {
 
     public static void addAuthor(Author author) {
         try {
             String query = "INSERT INTO authors(first_name, last_name) VALUES(?, ?)";
             PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement(query);
-            preparedStatement.setString(1, author.getFirst_name());
-            preparedStatement.setString(2, author.getLast_name());
+            preparedStatement.setString(1, author.getFirstName());
+            preparedStatement.setString(2, author.getLastName());
             preparedStatement.executeUpdate();
             preparedStatement.close();
             System.out.println("Author was inserted successfully! :)");
@@ -71,8 +72,8 @@ public class AuthorDao {
         try {
             String query = "UPDATE authors SET first_name = ?, last_name = ? WHERE author_id = " + id;
             PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement(query);
-            preparedStatement.setString(1, newAuthor.getFirst_name());
-            preparedStatement.setString(2, newAuthor.getLast_name());
+            preparedStatement.setString(1, newAuthor.getFirstName());
+            preparedStatement.setString(2, newAuthor.getLastName());
             preparedStatement.executeUpdate();
             preparedStatement.close();
             System.out.println("Author is up to date now! :)");

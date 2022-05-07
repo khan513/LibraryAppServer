@@ -1,4 +1,5 @@
-package data;
+package com.example.data;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;

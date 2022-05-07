@@ -1,6 +1,6 @@
-package net;
+package com.example.net;
 
-import data.LibraryDB;
+import com.example.data.LibraryDB;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -18,12 +18,12 @@ public class Server {
 
     public void startServer() {
         try {
-            System.out.println("Server has started at " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
+            System.out.println("Server has started at " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME).substring(0, 16));
             LibraryDB.connectToTheDatabase();
             while (!serverSocket.isClosed()) {
                 System.out.println("Server is waiting for clients...");
                 Socket socket = serverSocket.accept();
-                System.out.println("A new client with the address of " + socket.getInetAddress().getHostAddress().toLowerCase(Locale.ROOT) + " has connected! :)");
+                System.out.println("A new client with the address of " + socket.getInetAddress().getHostAddress().toLowerCase(Locale.ROOT) + " has connected at " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME).substring(0, 16));
                 ClientHandler clientHandler = new ClientHandler(socket);
                 clientHandler.start();
             }
