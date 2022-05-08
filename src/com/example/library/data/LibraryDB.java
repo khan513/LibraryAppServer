@@ -6,10 +6,10 @@ import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class LibraryDB {
+public class LibraryDB implements Database {
     static Connection connection;
 
-    public static void connectToTheDatabase() {
+    public void connectToTheDatabase() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             BufferedReader reader = new BufferedReader(new FileReader("/home/khan/IdeaProjects/LibraryAppServer/db_config"));

@@ -1,5 +1,6 @@
 package com.example.library.net;
 
+import com.example.library.data.Database;
 import com.example.library.data.LibraryDB;
 
 import java.io.IOException;
@@ -19,7 +20,8 @@ public class Server {
     public void startServer() {
         try {
             System.out.println("Server has started at " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME).substring(0, 16));
-            LibraryDB.connectToTheDatabase();
+            Database libraryDB = new LibraryDB();
+            libraryDB.connectToTheDatabase();
             while (!serverSocket.isClosed()) {
                 System.out.println("Server is waiting for clients...");
                 Socket socket = serverSocket.accept();
