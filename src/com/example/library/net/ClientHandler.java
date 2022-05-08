@@ -1,11 +1,11 @@
-package com.example.net;
+package com.example.library.net;
 
-import com.example.data.AuthorDao;
-import com.example.data.BookDao;
-import com.example.data.UserDao;
-import com.example.model.Author;
-import com.example.model.Book;
-import com.example.model.User;
+import com.example.library.data.AuthorDao;
+import com.example.library.data.BookDao;
+import com.example.library.data.UserDao;
+import com.example.library.model.Author;
+import com.example.library.model.Book;
+import com.example.library.model.User;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -81,6 +81,9 @@ public class ClientHandler extends Thread {
                         }
                     }
                     case DELETE -> {
+                        if (request.getDescription().equals("USER")) {
+                            UserDao.deleteUserById(Long.valueOf(request.getArgs().get(0)));
+                        }
                         if (request.getDescription().equals("BOOK")) {
                             BookDao.deleteBookById(Long.valueOf(request.getArgs().get(0)));
                         }

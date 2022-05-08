@@ -1,6 +1,6 @@
-package com.example.data;
+package com.example.library.data;
 
-import com.example.model.User;
+import com.example.library.model.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

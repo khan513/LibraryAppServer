@@ -1,6 +1,6 @@
-package com.example.net;
+package com.example.library.net;
 
-import com.example.data.LibraryDB;
+import com.example.library.data.LibraryDB;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -27,6 +27,7 @@ public class Server {
                 ClientHandler clientHandler = new ClientHandler(socket);
                 clientHandler.start();
             }
+            System.out.println("Server has shutdown at " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME).substring(0, 16));
         } catch (IOException e) {
             closeServerSocket();
             e.printStackTrace();

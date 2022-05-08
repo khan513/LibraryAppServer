@@ -1,4 +1,4 @@
-package com.example.net;
+package com.example.library.net;
 
 import java.io.Serializable;
 import java.util.List;

@@ -2,24 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a56190ea-373c-49ba-8c42-ed53deac294f" name="Changes" comment="creating Repos">
-      <change afterPath="$PROJECT_DIR$/src/com/example/net/RequestType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/595c8292-4ab5-44da-9960-866be4c3967e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/595c8292-4ab5-44da-9960-866be4c3967e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/AuthorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/data/AuthorDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/data/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/LibraryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/data/LibraryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/data/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/model/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/model/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/model/Publisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/net/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/net/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/RequestType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/net/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/data/AuthorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/data/AuthorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/data/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/data/BookDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/data/LibraryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/data/LibraryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/data/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/data/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/model/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/model/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/model/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/model/Publisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/net/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/net/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/net/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/net/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/net/RequestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/net/RequestType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/net/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/net/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +43,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/khan/IdeaProjects/cinema park FINAL&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "/home/khan/IdeaProjects/JavaPlayground",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.import"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -105,7 +102,8 @@
       <workItem from="1651901951448" duration="12000" />
       <workItem from="1651902383088" duration="3099000" />
       <workItem from="1651905506160" duration="16821000" />
-      <workItem from="1651924722440" duration="722000" />
+      <workItem from="1651924722440" duration="917000" />
+      <workItem from="1651928714318" duration="2722000" />
     </task>
     <task id="LOCAL-00001" summary="configuring the database">
       <created>1650703267588</created>

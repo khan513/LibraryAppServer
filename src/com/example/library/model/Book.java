@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.library.model;
 
 import java.io.Serializable;
 import java.sql.Date;
