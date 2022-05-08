@@ -82,7 +82,7 @@ public class UserDao {
 
     public static User login(String login, String password) {
         try {
-            PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement("SELECT * FROM users WHERE id=? and password=?");
+            PreparedStatement preparedStatement = LibraryDB.connection.prepareStatement("SELECT * FROM users WHERE login=? and password=?");
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, password);
             ResultSet result = preparedStatement.executeQuery();

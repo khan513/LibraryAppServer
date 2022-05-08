@@ -70,7 +70,7 @@ public class BookDao {
     public static void deleteBookByTitle(String title) {
         try {
             Statement statement = LibraryDB.connection.createStatement();
-            String query = "DELETE FROM books WHERE title = \'" + title + "\'";
+            String query = "DELETE FROM books WHERE title = '" + title + "'";
             statement.executeUpdate(query);
             statement.close();
             System.out.println("Book was deleted successfully! :)");
