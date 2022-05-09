@@ -2,7 +2,7 @@ package com.example.library.model;
 
 import java.io.Serializable;
 
-public class Author implements Serializable {
+public class Author extends Person implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;

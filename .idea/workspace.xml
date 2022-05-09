@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a56190ea-373c-49ba-8c42-ed53deac294f" name="Changes" comment="creating Repos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/library/data/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/data/UserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +30,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "last_opened_file_path": "/home/khan/IdeaProjects/Library",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.import"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/khan/IdeaProjects/Library&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -94,7 +94,12 @@
       <workItem from="1651928714318" duration="2722000" />
       <workItem from="1652005961209" duration="7247000" />
       <workItem from="1652031579499" duration="419000" />
-      <workItem from="1652032027519" duration="4176000" />
+      <workItem from="1652032027519" duration="4458000" />
+      <workItem from="1652037262135" duration="105000" />
+      <workItem from="1652040406457" duration="1049000" />
+      <workItem from="1652043252662" duration="753000" />
+      <workItem from="1652044127246" duration="541000" />
+      <workItem from="1652070941162" duration="2355000" />
     </task>
     <task id="LOCAL-00001" summary="configuring the database">
       <created>1650703267588</created>
