@@ -8,7 +8,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 public class Server {
     private final ServerSocket serverSocket;
@@ -25,11 +24,10 @@ public class Server {
             while (!serverSocket.isClosed()) {
                 System.out.println("Server is waiting for clients...");
                 Socket socket = serverSocket.accept();
-                System.out.println("A new client with the address of " + socket.getInetAddress().getHostAddress().toLowerCase(Locale.ROOT) + " has connected at " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME).substring(0, 16));
+                System.out.println("A new client has connected at " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME).substring(0, 16));
                 ClientHandler clientHandler = new ClientHandler(socket);
                 clientHandler.start();
             }
-            System.out.println("Server has shutdown at " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME).substring(0, 16));
         } catch (IOException e) {
             closeServerSocket();
             e.printStackTrace();

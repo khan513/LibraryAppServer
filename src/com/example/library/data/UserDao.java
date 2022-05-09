@@ -1,12 +1,12 @@
 package com.example.library.data;
 
+import com.example.library.model.Sex;
 import com.example.library.model.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class UserDao {
 
     public static void addUser(User user) {
         try {
-            String query = "INSERT INTO users(name, surname, login, password) VALUES(?, ?, ?, ?)";
+            String query = "INSERT INTO users(name, surname, login, password, sex) VALUES(?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = prepareStatement(user, query);
             preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -38,7 +38,8 @@ public class UserDao {
                                 result.getString("name"),
                                 result.getString("surname"),
                                 result.getString("login"),
-                                result.getString("password")
+                                result.getString("password"),
+                                Sex.valueOf(result.getString("sex"))
                         )
                 );
             }
@@ -48,8 +49,6 @@ public class UserDao {
             System.out.println("Could not retrieve the users :(");
             e.printStackTrace();
         }
-        if (users.isEmpty())
-            return Collections.emptyList();
         System.out.println("All the users were retrieved successfully! :)");
         return users;
     }
@@ -69,7 +68,7 @@ public class UserDao {
 
     public static void editUser(Long id, User newUser) {
         try {
-            String query = "UPDATE users SET name = ?, surname = ?, login = ?, password = ? WHERE user_id = " + id;
+            String query = "UPDATE users SET name = ?, surname = ?, login = ?, password = ?, sex = ? WHERE user_id = " + id;
             PreparedStatement preparedStatement = prepareStatement(newUser, query);
             preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -92,7 +91,8 @@ public class UserDao {
                         result.getString("name"),
                         result.getString("surname"),
                         result.getString("login"),
-                        result.getString("password")
+                        result.getString("password"),
+                        Sex.valueOf(result.getString("sex"))
                 );
             }
             preparedStatement.close();
@@ -109,6 +109,7 @@ public class UserDao {
         preparedStatement.setString(2, user.getSurname());
         preparedStatement.setString(3, user.getLogin());
         preparedStatement.setString(4, user.getPassword());
+        preparedStatement.setString(5, user.getSex().toString());
         return preparedStatement;
     }
 }

@@ -2,18 +2,14 @@ package com.example.library.data;
 
 import com.example.library.model.Book;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Collections;
+import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
 public class BookDao {
     public static void addBook(Book book) {
         try {
-            String query = "INSERT INTO books(title, total_pages, rating, isbn, published_date, publisher_id, reader_id) VALUES(?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO books(title, total_pages, rating, isbn, published_date, publisher_id, user_id) VALUES(?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = prepareStatement(book, query);
             preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -29,27 +25,24 @@ public class BookDao {
         try {
             Statement statement = LibraryDB.connection.createStatement();
             String query = "SELECT * FROM books";
-            ResultSet result = statement.executeQuery(query);
-            while (result.next()) {
-                books.add(new Book(
-                        result.getLong("book_id"),
-                        result.getString("title"),
-                        result.getInt("total_pages"),
-                        result.getDouble("rating"),
-                        result.getString("isbn"),
-                        result.getDate("published_date"),
-                        result.getLong("publisher_id"),
-                        result.getLong("reader_id")
-                ));
-            }
-            statement.close();
-            result.close();
+            books = queryBooks(statement, query);
         } catch (SQLException e) {
             System.out.println("Could not retrieve all the books :(");
             e.printStackTrace();
         }
-        if (books.isEmpty())
-            return Collections.emptyList();
+        System.out.println("All the books were retrieved successfully! :)");
+        return books;
+    }
+
+    public static List<Book> getBooksByReadId(Long id) {
+        List<Book> books = new LinkedList<>();
+        try {
+            Statement statement = LibraryDB.connection.createStatement();
+            String query = "SELECT * FROM books WHERE user_id = " + id;
+            books = queryBooks(statement, query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         System.out.println("All the books were retrieved successfully! :)");
         return books;
     }
@@ -82,7 +75,7 @@ public class BookDao {
 
     public static void editBook(Long id, Book newBook) {
         try {
-            String query = "UPDATE books SET title = ?, total_pages = ?, rating = ?, isbn = ?, published_date = ?, publisher_id = ?, reader_id = ? WHERE book_id = " + id;
+            String query = "UPDATE books SET title = ?, total_pages = ?, rating = ?, isbn = ?, published_date = ?, publisher_id = ?, user_id = ? WHERE book_id = " + id;
             PreparedStatement preparedStatement = prepareStatement(newBook, query);
             preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -101,7 +94,27 @@ public class BookDao {
         preparedStatement.setString(4, book.getIsbn());
         preparedStatement.setDate(5, book.getPublished_date());
         preparedStatement.setLong(6, book.getPublisher_id());
-        preparedStatement.setLong(7, book.getReader_id());
+        preparedStatement.setLong(7, book.getUser_id());
         return preparedStatement;
+    }
+
+    private static List<Book> queryBooks(Statement statement, String query) throws SQLException {
+        List<Book> books = new LinkedList<>();
+        ResultSet result = statement.executeQuery(query);
+        while (result.next()) {
+            books.add(new Book(
+                    result.getLong("book_id"),
+                    result.getString("title"),
+                    result.getInt("total_pages"),
+                    result.getDouble("rating"),
+                    result.getString("isbn"),
+                    result.getDate("published_date"),
+                    result.getLong("publisher_id"),
+                    result.getLong("user_id")
+            ));
+        }
+        statement.close();
+        result.close();
+        return books;
     }
 }

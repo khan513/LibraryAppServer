@@ -11,22 +11,22 @@ public class Book implements Serializable {
     private String isbn;
     private Date published_date;
     private Long publisher_id;
-    private Long reader_id;
+    private Long user_id;
 
     public Book() {
     }
 
-    public Book(String title, Integer total_pages, Double rating, String isbn, Date published_date, Long publisher_id, Long reader_id) {
+    public Book(String title, Integer total_pages, Double rating, String isbn, Date published_date, Long publisher_id, Long user_id) {
         this.title = title;
         this.total_pages = total_pages;
         this.rating = rating;
         this.isbn = isbn;
         this.published_date = published_date;
         this.publisher_id = publisher_id;
-        this.reader_id = reader_id;
+        this.user_id = user_id;
     }
 
-    public Book(Long id, String title, Integer total_pages, Double rating, String isbn, Date published_date, Long publisher_id, Long reader_id) {
+    public Book(Long id, String title, Integer total_pages, Double rating, String isbn, Date published_date, Long publisher_id, Long user_id) {
         this.id = id;
         this.title = title;
         this.total_pages = total_pages;
@@ -34,7 +34,7 @@ public class Book implements Serializable {
         this.isbn = isbn;
         this.published_date = published_date;
         this.publisher_id = publisher_id;
-        this.reader_id = reader_id;
+        this.user_id = user_id;
     }
 
     @Override
@@ -47,7 +47,7 @@ public class Book implements Serializable {
                 ", isbn='" + isbn + '\'' +
                 ", published_date=" + published_date +
                 ", publisher_id=" + publisher_id +
-                ", reader_id=" + reader_id +
+                ", user_id=" + user_id +
                 '}';
     }
 
@@ -103,11 +103,11 @@ public class Book implements Serializable {
         this.publisher_id = publisher_id;
     }
 
-    public Long getReader_id() {
-        return reader_id;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setReader_id(Long reader_id) {
-        this.reader_id = reader_id;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 }

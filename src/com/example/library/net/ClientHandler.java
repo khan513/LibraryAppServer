@@ -37,8 +37,7 @@ public class ClientHandler extends Thread {
             Request request;
             while ((request = (Request) in.readObject()) != null) {
                 System.out.println("Request [" +
-                        "Client: " + socket.getInetAddress().getHostAddress().toLowerCase(Locale.ROOT) +
-                        "\tType: " + request.getType() +
+                        "Type: " + request.getType() +
                         "\tDescription: " + request.getDescription() +
                         "\tTime: " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME).substring(0, 16)
                         + "]"
@@ -48,6 +47,10 @@ public class ClientHandler extends Thread {
                         if (request.getDescription().equals("LOGIN")) {
                             User user = UserDao.login(request.getArgs().get(0), request.getArgs().get(1));
                             out.writeObject(user);
+                        }
+                        if (request.getDescription().equals("USER'S BOOKS")) {
+                            List<Book> books = BookDao.getBooksByReadId(Long.valueOf(request.getArgs().get(0)));
+                            out.writeObject(books);
                         }
                         if (request.getDescription().equals("ALL THE BOOKS")) {
                             List<Book> books = BookDao.getAllBooks();

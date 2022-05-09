@@ -9,22 +9,26 @@ public class User extends Person implements Serializable {
     private String login;
     private String password;
 
+    private Sex sex;
+
     public User() {
     }
 
-    public User(String name, String surname, String login, String password) {
+    public User(String name, String surname, String login, String password, Sex sex) {
         this.login = login;
         this.password = password;
         this.name = name;
         this.surname = surname;
+        this.sex = sex;
     }
 
-    public User(Long id, String name, String surname, String login, String password) {
+    public User(Long id, String name, String surname, String login, String password, Sex sex) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.login = login;
         this.password = password;
+        this.sex = sex;
     }
 
     @Override
@@ -35,6 +39,7 @@ public class User extends Person implements Serializable {
                 ", surname='" + surname + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
+                ", sex=" + sex +
                 '}';
     }
 
@@ -72,5 +77,13 @@ public class User extends Person implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
     }
 }
