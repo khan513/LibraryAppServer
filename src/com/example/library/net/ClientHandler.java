@@ -1,11 +1,7 @@
 package com.example.library.net;
 
-import com.example.library.data.AuthorDao;
-import com.example.library.data.BookDao;
-import com.example.library.data.UserDao;
-import com.example.library.model.Author;
-import com.example.library.model.Book;
-import com.example.library.model.User;
+import com.example.library.data.*;
+import com.example.library.model.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -60,6 +56,14 @@ public class ClientHandler extends Thread {
                             List<Author> authors = AuthorDao.getAllAuthors();
                             out.writeObject(authors);
                         }
+                        if (request.getDescription().equals("ALL THE GENRES")) {
+                            List<Genre> genres = GenreDao.getAllGenres();
+                            out.writeObject(genres);
+                        }
+                        if (request.getDescription().equals("ALL THE PUBLISHERS")) {
+                            List<Publisher> publishers = PublisherDao.getAllPublishers();
+                            out.writeObject(publishers);
+                        }
                     }
                     case POST -> {
                         if (request.getDescription().equals("REGISTER")) {
@@ -70,6 +74,12 @@ public class ClientHandler extends Thread {
                         }
                         if (request.getDescription().equals("AUTHOR")) {
                             AuthorDao.addAuthor((Author) request.getObject());
+                        }
+                        if (request.getDescription().equals("GENRE")) {
+                            GenreDao.addGenre((Genre) request.getObject());
+                        }
+                        if (request.getDescription().equals("PUBLISHER")) {
+                            PublisherDao.addPublisher((Publisher) request.getObject());
                         }
                     }
                     case PUT -> {
@@ -82,6 +92,12 @@ public class ClientHandler extends Thread {
                         if (request.getDescription().equals("AUTHOR")) {
                             AuthorDao.editAuthor(Long.valueOf(request.getArgs().get(0)), (Author) request.getObject());
                         }
+                        if (request.getDescription().equals("GENRE")) {
+                            GenreDao.editGenre(Long.valueOf(request.getArgs().get(0)), (Genre) request.getObject());
+                        }
+                        if (request.getDescription().equals("PUBLISHER")) {
+                            PublisherDao.editPublisher(Long.valueOf(request.getArgs().get(0)), (Publisher) request.getObject());
+                        }
                     }
                     case DELETE -> {
                         if (request.getDescription().equals("USER")) {
@@ -93,6 +109,12 @@ public class ClientHandler extends Thread {
                         if (request.getDescription().equals("AUTHOR")) {
                             AuthorDao.deleteAuthorById(Long.valueOf(request.getArgs().get(0)));
                         }
+                        if (request.getDescription().equals("GENRE")) {
+                            GenreDao.deleteGenreById(Long.valueOf(request.getArgs().get(0)));
+                        }
+                        if (request.getDescription().equals("PUBLISHER")) {
+                            PublisherDao.deletePublisherById(Long.valueOf(request.getArgs().get(0)));
+                        }
                     }
                 }
             }
@@ -100,7 +122,6 @@ public class ClientHandler extends Thread {
             closeEverything(socket, in, out);
             e.printStackTrace();
         }
-
     }
 
     public void closeEverything(Socket socket, ObjectInputStream in, ObjectOutputStream out) {
