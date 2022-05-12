@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a56190ea-373c-49ba-8c42-ed53deac294f" name="Changes" comment="creating Repos">
-      <change afterPath="$PROJECT_DIR$/src/com/example/library/data/GenreDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/library/data/PublisherDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/595c8292-4ab5-44da-9960-866be4c3967e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/595c8292-4ab5-44da-9960-866be4c3967e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/library/net/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/library/net/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +109,12 @@
       <workItem from="1652105613363" duration="2459000" />
       <workItem from="1652108196594" duration="2854000" />
       <workItem from="1652111333162" duration="719000" />
-      <workItem from="1652119158461" duration="4679000" />
+      <workItem from="1652119158461" duration="4795000" />
+      <workItem from="1652156778193" duration="169000" />
+      <workItem from="1652177795568" duration="219000" />
+      <workItem from="1652196892614" duration="68000" />
+      <workItem from="1652197850524" duration="242000" />
+      <workItem from="1652284941984" duration="810000" />
     </task>
     <task id="LOCAL-00001" summary="configuring the database">
       <created>1650703267588</created>
